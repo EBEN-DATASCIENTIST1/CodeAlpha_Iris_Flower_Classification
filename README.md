@@ -2,98 +2,84 @@
 
 ## Project Overview
 
+This project uses machine learning to classify Iris flowers into three species: **Iris-setosa, Iris-versicolor, and Iris-virginica**. It uses flower measurements to train and evaluate multiple classification algorithms.
+
 This project was completed as part of the CodeAlpha Data Science Internship.
 
-The objective is to build a machine-learning classification model that can
-predict the species of an Iris flower from its sepal and petal measurements.
+## Objectives
 
-The Iris dataset contains three species:
-
-- Iris-setosa
-- Iris-versicolor
-- Iris-virginica
+- Explore and visualize the Iris dataset.
+- Prepare the data for machine learning.
+- Train and compare classification models.
+- Evaluate model performance using classification metrics.
+- Predict the species of a new Iris flower.
 
 ## Dataset
 
-The dataset contains 150 flower samples and four measurement features:
+The dataset contains 150 observations and the following columns:
 
-- Sepal Length
-- Sepal Width
-- Petal Length
-- Petal Width
+- `SepalLengthCm`
+- `SepalWidthCm`
+- `PetalLengthCm`
+- `PetalWidthCm`
+- `Species`
 
-The `Id` column is used only as an identifier and is not used for prediction.
+The `Id` column is an identifier and is not used as a predictive feature. The dataset contains 50 observations for each species and no missing values.
 
-## Exploratory Data Analysis
+## Technologies Used
 
-The dataset was explored using:
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Jupyter Notebook
 
-- Dataset information
-- Descriptive statistics
-- Missing-value analysis
-- Species distribution
-- Pairplot
-- Feature boxplots
+## Methodology
 
-## Machine Learning Models
+1. Load the Iris dataset using Pandas.
+2. Explore the data using statistical summaries and visualizations.
+3. Separate the four numerical features from the target species.
+4. Split the dataset into 80% training data and 20% testing data using stratified sampling.
+5. Apply `StandardScaler` to the training and test features.
+6. Train Logistic Regression, K-Nearest Neighbors, Decision Tree, Support Vector Classifier, and Random Forest models.
+7. Evaluate the models using accuracy, precision, recall, and F1-score.
+8. Use the best-performing model to predict the species of a new flower.
 
-The following classification algorithms were trained and compared:
+## Model Performance
 
-1. Logistic Regression
-2. K-Nearest Neighbors
-3. Decision Tree
-4. Support Vector Machine
-5. Random Forest
+| Model                     |   Accuracy |  Precision |     Recall |   F1-Score |
+| ------------------------- | ---------: | ---------: | ---------: | ---------: |
+| Logistic Regression       |     93.33% |     93.33% |     93.33% |     93.33% |
+| K-Nearest Neighbors       |     93.33% |     94.44% |     93.33% |     93.27% |
+| Decision Tree             |     90.00% |     90.24% |     90.00% |     89.97% |
+| Support Vector Classifier | **96.67%** | **96.97%** | **96.67%** | **96.66%** |
+| Random Forest             |     90.00% |     90.24% |     90.00% |     89.97% |
 
-## Model Evaluation
+The Support Vector Classifier achieved the highest accuracy on the test set, correctly classifying 29 out of 30 flowers.
 
-The models were evaluated using:
+## Sample Prediction
 
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- Confusion Matrix
+A flower with the following measurements was used for a sample prediction:
 
-### Results
+- Sepal length: 5.1 cm
+- Sepal width: 3.5 cm
+- Petal length: 1.4 cm
+- Petal width: 0.2 cm
 
-| Model                  | Accuracy | Precision | Recall | F1 Score |
-| ---------------------- | -------: | --------: | -----: | -------: |
-| Logistic Regression    |   93.33% |    93.33% | 93.33% |   93.33% |
-| K-Nearest Neighbors    |   93.33% |    94.44% | 93.33% |   93.27% |
-| Decision Tree          |   90.00% |    90.24% | 90.00% |   89.97% |
-| Support Vector Machine |   96.67% |    96.97% | 96.67% |   96.66% |
-| Random Forest          |   90.00% |    90.24% | 90.00% |   89.97% |
+**Predicted species:** `Iris-setosa`
 
-The Support Vector Machine had the highest observed performance on the
-20% test split, with an accuracy of 96.67%.
+## Results
 
-## Prediction Example
+The model comparison results are saved in `results/model_comparison.csv`. The notebook also includes exploratory visualizations and a confusion matrix for the selected model.
 
-A new flower with the following measurements was tested:
+## Conclusion
 
-- Sepal Length: 5.1 cm
-- Sepal Width: 3.5 cm
-- Petal Length: 1.4 cm
-- Petal Width: 0.2 cm
+This project demonstrates how machine learning classification algorithms can identify Iris flower species from numerical measurements. The Support Vector Classifier achieved the best test-set performance among the five evaluated models.
 
-Predicted species:
+## Author
 
-**Iris-setosa**
+**EBENEZER DABIRE**
 
-## Project Structure
-
-text
-CodeAlpha_Iris_Flower_Classification/
-│
-├── data/
-│ └── Iris.csv
-│
-├── notebooks/
-│ └── iris_classification.ipynb
-│
-├── results/
-│ └── model_comparison.csv
-│
-├── README.md
-└── requirements.txt
+GitHub: https://github.com/EBEN-DATASCIENTIST1
